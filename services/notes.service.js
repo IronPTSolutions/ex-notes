@@ -33,6 +33,7 @@ module.exports.create = (note) => {
 
     if (Object.values(errors).length > 0) {
       const error = new Error('Note is invalid!!');
+      error.name = 'ValidationError';
       error.errors = errors;
       reject(error);
     } else {

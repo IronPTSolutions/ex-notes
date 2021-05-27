@@ -1,0 +1,14 @@
+<form action="/notes" method="post">
+  <div class="input-group mb-3">
+    <span class="input-group-text"><i class="fa fa-user fa-fw"></i></span>
+    <input type="text" name="user" class="form-control {{#if errors.user }} is-invalid {{/if}}" placeholder="Username" aria-label="Username" value="{{ note.user }}">
+    {{#if errors.user }} <div class="invalid-feedback">{{ errors.user }}</div> {{/if}}
+    
+  </div>
+  <div class="input-group mb-3">
+    <span class="input-group-text"><i class="fa fa-edit fa-fw"></i></span>
+    <textarea class="form-control {{#if errors.message }} is-invalid {{/if}}" name="message" aria-label="With textarea">{{ note.message }}</textarea>
+    {{#if errors.message }} <div class="invalid-feedback">{{ errors.message }}</div> {{/if}}
+  </div>
+  <button type="submit" class="btn btn-primary">Create Note</button>
+</form>

@@ -1,7 +1,7 @@
 
 <ul>
   {{#each notes as |note| }}
-    <li>{{ note.message }}</li>
+    <li>[{{ note.id }}]{{ note.message }}  /notes/{{ note.id }}</li>
   {{/each}}
 </ul>
 

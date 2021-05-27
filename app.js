@@ -8,6 +8,9 @@ app.set('views', `${__dirname}/views`);
 app.set('view engine', 'hbs');
 hbs.registerPartials(`${__dirname}/views/partials`);
 
+// Decode body
+app.use(express.urlencoded({ extended: false }));
+
 // App routes
 const routes = require('./config/routes.config');
 app.use('/', routes);
